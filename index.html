@@ -1,9 +1,99 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- metadata about the HTML document -->
+		<meta charset="UTF-8">
+		<!-- Title -->
 		<title>Tip Calculator</title>
+		<!-- Stylesheet -->
+		<link rel="stylesheet" href="css/p3.css" type="text/css">
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<h1>Tip Calculator</h1>
+		<div id='wrapper'>
+			<!-- Page Header -->
+			<h1>Tip Calculator</h1>
+			<!-- Input fileds -->
+			<table>
+				<!-- Input field to specify the dollar amount of the bill -->
+				<tr>
+					<td>Bill Amount: $</td>
+					<td>
+						<input type='text' value='0.00' onkeyup='validateCheckAmount()' onchange='validateCheckAmount()' name='check_amount' required>
+						<!-- Place holder for Error message  next to input field -->
+						<span class='error' id='error_message'></span> 
+					</td>
+				</tr>
+				<!-- Dropdown list to select the service tip -->
+				<tr>
+					<td>Service Tip %:</td>
+					<td>
+						<select name='service'>
+							<option value='0'>0% (Included)</option>
+							<option value='5'>5% (Poor)</option>
+							<option value='10'>10% (Fair)</option>
+							<option value='15'>15% (Good)</option>
+							<option value='20'>20% (Great)</option>
+							<option value='25'>25% (Excellent)</option>
+						</select>
+					</td>
+				</tr>
+				<!-- Dropdown list to select the number of people to split -->
+				<tr>
+					<td>Split:</td>
+					<td>
+						<select name='splits'>
+							<option value='1'>No Split</option>
+							<option value='2'>2 People Split</option>
+							<option value='3'>3 People Split</option>
+							<option value='4'>4 People Split</option>
+							<option value='5'>5 People Split</option>
+							<option value='6'>6 People Split</option>
+							<option value='7'>7 People Split</option>
+							<option value='8'>8 People Split</option>
+							<option value='9'>9 People Split</option>
+							<option value='10'>10 People Split</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<!-- Results Header -->
+			<h3>Results:</h3>
+			<!-- Table for Results -->
+			<table>
+				<!-- Row to display the 'Total to Pay' value -->
+				<tr>
+					<td>Total to pay</td>
+					<td>: $</td>
+					<td id='total_to_pay'>0.00</td>
+				</tr>
+				<!-- Row to display the 'Total tip' value -->
+				<tr>
+					<td>Total tip</td>
+					<td>: $</td>
+					<td id='total_tip'>0.00</td>
+				</tr>
+				<!-- Row to display the 'Total per person' value -->
+				<tr>
+					<td>Total per person</td>
+					<td>: $</td>
+					<td id='total_per_person'>0.00</td>
+				</tr>
+				<!-- Row to display the 'Tip per person' value -->
+				<tr>
+					<td>Tip per person</td>
+					<td>: $</td>
+					<td id='tip_per_person'>0.00</td>
+				</tr>
+			</table>
+		</div>
+		<div id="footer">
+			<h4>How to calculate the tip</h4>
+			<p>Enter the bill amount and select the percentage of the tip that you'd like to give for the service provided. Incase if the total amount need to split between parties then select the corresponding split option.</p>
+			<p> That's all what you need to do for calculating the tip and the calculations will be done automatically based on your selections and results will be updated accordingly</p>
+		</div>
+		<!-- javascript -->
+		<script type="text/javascript" charset="UTF-8" src="js/p3.js"></script>
 	</body>
 </html>
